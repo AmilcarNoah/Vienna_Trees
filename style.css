@@ -1,0 +1,144 @@
+html, body { color: rgb(14, 10, 238);
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Appearance of the single story section */
+section {
+
+}
+body {
+    background-color: #e5e5e5f7; /* Dark background color */
+    color: #f1f1f1; /* Light text for contrast */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+/* #mapContainer{
+    /* height: 1rem; 
+    width: 1rem; */
+    /* background: linear-gradient(135deg, hsl(162, 100%, 98%), hsla(154, 100%, 79%, 0.769)); */
+         
+
+/* } */ */
+#mapContainer {
+    position: relative;
+    flex: 1; /* Makes the map container take the full height of the viewport */
+    height: 100%;
+  }
+
+
+/* Position the legend at the top-left corner */
+#legend {
+    position: absolute;
+    top: 20px; /* Distance from the top of the page */
+    left: 20px; /* Distance from the left of the page */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black background for the legend */
+    color: #fff; /* White text color for the legend */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 20; /* Make sure the legend is on top of other elements */
+  }
+#legend h2 {
+    color: #fff; /* White text for heading */
+    font-size: 24px;
+  }
+  
+#legend p {
+    color: #ccc; /* Light gray text for descriptions */
+    font-size: 16px;
+  }
+  
+  
+
+/* Legend styling */
+/* #legend {position: absolute;
+    width: 300px; 
+    background:white; 
+    padding: 10px;
+    opacity: 0.9; 
+    border-style: dotted;
+} */
+
+/* Finding styling */
+.finding-1 { box-shadow: 0 -8px 0 YellowGreen inset;
+    -webkit-box-shadow: 0 -8px 0 YellowGreen inset; } 
+    
+.finding-2 { box-shadow: 0 -7px teal inset; 
+    -webkit-box-shadow: 0 -7px 0 teal inset; } 
+
+:not(svg) {
+    transform-origin: 0px 0px;
+    }
+
+
+    #zoomin, #zoomout, #resetzoom {
+        position: absolute;
+        right: 15px; 
+        display: block; 
+        padding: 12px 24px;
+        font-size: 18px;
+        background-color: #007BFF; 
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        margin-bottom: 10px; 
+    }
+    
+    #zoomin {
+        top: 15px; 
+    }
+    
+    #zoomout {
+        top: 70px; 
+    }
+    
+    
+    #resetzoom {
+        top: 125px; 
+        background-color: #007BFF; 
+    }
+    
+    #resetzoom:hover {
+        background-color: #0056b3; 
+        transform: scale(1.05); 
+    }
+    
+    
+    #zoomin:hover, #zoomout:hover {
+        background-color: #0056b3; 
+        transform: scale(1.05); 
+    }
+    
+    
+    #zoomin:focus, #zoomout:focus, #resetzoom:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); 
+    }
+div.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted rgb(20, 170, 0); */
+    /* visibility: hidden; */
+    width: 120px;
+    background-color: rgb(47, 47, 47);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 15px;
+    position: absolute;
+    z-index: 1;
+  }
+ 
