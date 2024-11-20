@@ -8,7 +8,7 @@ section {
 
 }
 body {
-    background-color: hsla(0, 0%, 23%, 0.969); /* Dark background color */
+    background-color: #464545f7; /* Dark background color */
     color: #f1f1f1; /* Light text for contrast */
     font-family: 'Arial', sans-serif;
     margin: 0;
