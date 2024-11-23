@@ -67,8 +67,8 @@ d3.json("data/trees-oldtown.geojson")
       .attr('r', 3)  // Set size (radius) of the circle
       .attr("stroke", "#6b9023")
       .attr("stroke-width", 0.5)
-      // .attr("stroke-opacity", 1)
-      // .attr("fill", "Yellowgreen")
+      .attr("stroke-opacity", 1)
+      .attr("fill", "Yellowgreen")
       .attr("fill-opacity", 0.5)
       .attr('stroke', function(d) {
         if (d.properties.PlantingYear >= 2010 && d.properties.PlantingYear < 2020) {
@@ -81,15 +81,15 @@ d3.json("data/trees-oldtown.geojson")
         else {
           return "Pink"; 
         }})
-      // .attr("r", function(d) { 
-      //   let scale = d3.scaleSqrt()
-      //     .domain([0, 600])
-      //     .range([0, 10]);
-      //   let radiusSize = d3.scaleLinear()  
-      //     .domain([0, 300, 600])
-      //     .range([1, 5, 10])
-      //   return radiusSize(d.properties.TrunkSize)
-      // })
+      .attr("r", function(d) { 
+        let scale = d3.scaleSqrt()
+          .domain([0, 600])
+          .range([0, 10]);
+        let radiusSize = d3.scaleLinear()  
+          .domain([0, 300, 600])
+          .range([1, 5, 10])
+        return radiusSize(d.properties.TrunkSize)
+      })
 
       .attr("r", function(d) {
         let smallestTree = d3.min(trees.features, function(d) {
@@ -104,42 +104,28 @@ d3.json("data/trees-oldtown.geojson")
         return radiusSize(d.properties.TrunkSize)
       })
       
-      .attr("fill", function(d){
-        let treeColor = d3.scaleSqrt()
-        .domain([0,2,4,6,8]) 
-        .range(["white","blue","green","yellow","orange"]) // Set colour values
-        return treeColor(d.properties.TreeHeight)
-      })
-
-      // .attr("fill", function(d){
-      //   let colorScale = d3.scaleOrdinal() // Set scale type to ordinal
-      //   .domain(["Tilia cordata 'Greenspire' (Stadtlinde)", "Celtis australis (Südlicher Zürgelbaum)",
-      //   "Acer pseudoplatanus 'Atropurpureum' (Purpurner Bergahorn)"]) // Give names of the tree types
-      //   .range(["pink", "yellow", "green"]) // Display each tree type with its distinct colour name
-      //   return colorScale(d.properties.TreeType)
-      // })
 
       .on("dblclick", function(event, d) {
         d3.select(this)
           .raise()
           .transition()
           .duration(400)
-          .attr("fill","red")
-          .attr("stroke-width",2)
+          .attr("stroke","purple")
+          .attr("fill","purple")
+          .attr("stroke-width",1.3)
           .attr("cursor","pointer")
           div.transition()
-            .duration(700)
-              .style("opacity", 5);
+            .duration(500)
+              .style("opacity", 2);
 
-          //do something with our tree
         })
       .on("click", function(event, d) {
         d3.select(this) // Select the single tree which is being hovered over
           .raise() // Display the selected tree on the top of other trees
           .transition() // Set the smooth transition – animation from current tree state to “hovered” state
-          .duration(700) // Set the time for transition - in milliseconds
-          .attr("fill", "blue") // Change tree colour to yellow
-          .attr("stroke-color", blue) // Change the thickness of the circle stroke
+          .duration(500) // Set the time for transition - in milliseconds
+          .attr("fill", "aqua") // Change tree colour to blue
+          .attr("stroke", "aqua") // Change the stroke color of the circle stroke
           .attr("cursor", "pointer") // Change default mouse cursor to pointer with the finger
           })
       .on("mouseover", function(event, d) {
@@ -147,8 +133,9 @@ d3.json("data/trees-oldtown.geojson")
           .raise() // Display the selected tree on the top of other trees
           .transition() // Set the smooth transition – animation from current tree state to “hovered” state
           .duration(500) // Set the time for transition - in milliseconds
-          .attr("fill", "yellow") // Change tree colour to yellow
-          .attr("stroke-width", 2) // Change the thickness of the circle stroke
+          .attr("fill", "white") // Change tree colour to Yellow
+          .attr("fill-opacity", 0.9)
+          .attr("stroke-width", 0.2) // Change the thickness of the circle stroke
           .attr("cursor", "pointer") // Change default mouse cursor to pointer with the finger
           div.transition()
             .duration(10) // Set time until tooltip appears on the screen (in milliseconds)
@@ -165,8 +152,21 @@ d3.json("data/trees-oldtown.geojson")
                     .lower() // Display the selected tree on the bottom of other trees (move to back)
                     .transition() // Set the smooth transition – animation from “hovered” to “unhovered” state
                     .duration(500) // Set the time for transition - in milliseconds
-                    .attr("stroke-width", 1) // Reset the stroke thickness to initial value
-                    .attr("fill", "yellowGreen") // Reset the tree colour to initial value
+                    .attr("stroke-width", 0.5) // Reset the stroke thickness to initial value
+                    .attr("fill", "Yellowgreen")
+                    .attr("fill-opacity", 0.5)
+                    .attr('stroke', function(d) {
+                      if (d.properties.PlantingYear >= 2010 && d.properties.PlantingYear < 2020) {
+                        return "red"; 
+                      } else if (d.properties.PlantingYear >= 2000 && d.properties.PlantingYear < 2010) {
+                        return "orange"; 
+                      } else if(d.properties.PlantingYear >= 1990 && d.properties.PlantingYear < 2000){
+                        return "blue";
+                      }
+                      else {
+                        return "Pink"; 
+                      }
+                    })
                     div.transition()
                       .duration(10) // Set time until tooltip appears on the screen
                       .style("opacity", 0) // Set the transparency of the tooltip to 0%
