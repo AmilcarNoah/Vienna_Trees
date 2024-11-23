@@ -7,8 +7,9 @@ html, body { color: rgb(14, 10, 238);
 section {
 
 }
+
 body {
-    background-color: #464545f7; /* Dark background color */
+    background-color: #1d1c1cf7; /* Dark background color */
     color: #f1f1f1; /* Light text for contrast */
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -130,12 +131,12 @@ div.tooltip {
     /* border-bottom: 1px dotted rgb(20, 170, 0); */
     /* visibility: hidden; */
     width: 120px;
-    background-color: rgb(47, 47, 47);
+    background-color: rgb(79, 141, 229);
     color: #fff;
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 5px 0;
     font-size: 15px;
     position: absolute;
