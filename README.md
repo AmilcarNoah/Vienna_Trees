@@ -1,2 +1,2 @@
 # Vienna_Trees
- Vienna Trees Visualization fot Geovisual ANalytics
+ Vienna Trees Visualization for Geovisual Analytics
