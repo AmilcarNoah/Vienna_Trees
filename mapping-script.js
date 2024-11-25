@@ -154,6 +154,7 @@ d3.json("data/trees-oldtown.geojson")
                 "</tr>"+
                   "<td>Planting Year: </td>" +
                   "<td>"+ d.properties.PlantingYear + "</td>"+
+              "</tr>" +
               "</table>"
             )
               .style("position", "absolute") // set from where the positional coordinates are counted
