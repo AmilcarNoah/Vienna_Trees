@@ -142,7 +142,7 @@ d3.json("data/trees-oldtown.geojson")
             .duration(10) // Set time until tooltip appears on the screen (in milliseconds)
               .style("opacity", .9); // Set the transparency of the tooltip to 90%
             // Display the data-driven text in the tooltip, e.g., year of planting
-          div.html(
+            div.html(
               "<table>" +
                 "<tr>"+
                   "<th>Attribute:</th>"+
@@ -154,16 +154,14 @@ d3.json("data/trees-oldtown.geojson")
                 "</tr>"+
                   "<td>Planting Year: </td>" +
                   "<td>"+ d.properties.PlantingYear + "</td>"+
-                "</tr?"+
-                  "<td>Tree Height(meters): </td>" +
-                  "<td>"+ d.properties.TreeHeight + "</td>"+
-              
               "</table>"
             )
               .style("position", "absolute") // set from where the positional coordinates are counted
               .style("left", (event.pageX + 5) + "px") // Set horizontal position of the tooltip - horizontal distance from the mouse pointer in pixels, e.g., 10px
               .style("top", (event.pageY - 5) + "px") // Vertical position of the tooltip - vertical distance from the mouse pointer in pixels, e.g., 10px
                     })
+        
+          
         .on("mouseout", function(event, d) {
           /* Define the behavior once a mouse pointer leaves tree symbol */
                   d3.select(this)
