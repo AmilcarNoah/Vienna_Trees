@@ -152,6 +152,7 @@ d3.json("data/trees-oldtown.geojson")
                   "<td>Species: </td>"+
                   "<td>" + d.properties.TreeType + "</td>" +
                 "</tr>"+
+                "</tr>"+
                   "<td>Planting Year: </td>" +
                   "<td>"+ d.properties.PlantingYear + "</td>"+
               "</tr>" +
