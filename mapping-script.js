@@ -16,7 +16,7 @@ var svg = d3.select("#mapContainer")  // Select the #mapContainer element within
 var g = svg.append("g");
 var l = svg.append("g");
 
-var projection = d3.geoEquirectangular();  //d3.geoAzimuthalEquidistant(); // or d3.geoEquirectangular()  
+var projection = d3.geoAlbers()();  //suitable extent and location considered  
 var path = d3.geoPath()
   .projection(projection);
 
