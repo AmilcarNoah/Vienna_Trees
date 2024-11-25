@@ -142,7 +142,7 @@ d3.json("data/trees-oldtown.geojson")
             .duration(10) // Set time until tooltip appears on the screen (in milliseconds)
               .style("opacity", .9); // Set the transparency of the tooltip to 90%
             // Display the data-driven text in the tooltip, e.g., year of planting
-            div.html(
+          div.html(
               "<table>" +
                 "<tr>"+
                   "<th>Attribute:</th>"+
