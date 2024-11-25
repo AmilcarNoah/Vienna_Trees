@@ -16,7 +16,10 @@ var svg = d3.select("#mapContainer")  // Select the #mapContainer element within
 var g = svg.append("g");
 var l = svg.append("g");
 
-var projection = d3.geoAlbers()  //suitable extent and location considered  
+var projection = d3.geoAlbers()    //suitable extent and location considered  
+    .center([16.373, 48.208])  // Longitude and Latitude of Vienna
+    .rotate([4, 0])  
+    .scale(7000);  
 var path = d3.geoPath()
   .projection(projection);
 
