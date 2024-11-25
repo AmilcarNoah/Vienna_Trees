@@ -130,7 +130,8 @@ div.tooltip {
     display: inline-block;
     /* border-bottom: 1px dotted rgb(20, 170, 0); */
     /* visibility: hidden; */
-    width: 120px;
+    width: fit-content;
+    height: fit-content;
     background-color: rgb(79, 141, 229);
     color: #fff;
     text-align: center;
